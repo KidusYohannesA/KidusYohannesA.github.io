@@ -36,12 +36,12 @@ h1 {
     object-fit: cover;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    transform: translateX(-30px);
+    transform: translateX(-130px);
 
 }
 
 .image-placeholder:hover {
-    transform: translateX(-30px) scale(1.05);
+    transform: translateX(-130px) scale(1.05);
 }
 
 .main-content {

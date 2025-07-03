@@ -33,12 +33,10 @@ h1 {
     border-radius: 50%;
     margin: 0 auto;
     display: block;
-    /* Changed from flex */
     object-fit: cover;
-    /* This ensures the image fits nicely in the circle */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    /* Remove the background gradient and text-related properties */
+
 }
 
 .image-placeholder:hover {

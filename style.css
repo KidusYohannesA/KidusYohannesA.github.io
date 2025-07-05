@@ -34,7 +34,7 @@ h1 {
     margin: 0 auto;
     display: block;
     object-fit: cover;
-    object-position: -15px center;
+    object-position: -10px center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }

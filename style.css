@@ -12,6 +12,15 @@ header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* Full width */
+    min-height: 50vh;
+    /* Takes up half the screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -45,8 +54,8 @@ h1 {
 
 .main-content {
     padding: 60px 20px;
-    /*max-width: 800px;*/
-    min-height: 100vh;
+    min-height: calc(100vh - 50vh);
+    /* Remaining height after header */
     margin: 0 auto;
     background-image: url('images/yushang-xu-W9hjnF3M4QM-unsplash.jpg');
     background-size: cover;

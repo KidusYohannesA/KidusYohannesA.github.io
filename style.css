@@ -46,7 +46,7 @@ h1 {
 .main-content {
     padding: 60px 20px;
     /*max-width: 800px;*/
-    min-height: calc(100vh/2);
+    min-height: 100vh;
     margin: 0 auto;
     background-image: url('images/yushang-xu-W9hjnF3M4QM-unsplash.jpg');
     background-size: cover;

@@ -45,7 +45,7 @@ h1 {
 
 .main-content {
     padding: 60px 20px;
-    max-width: 800px;
+    /*max-width: 800px;*/
     margin: 0 auto;
     background-image: url('images/yushang-xu-W9hjnF3M4QM-unsplash.jpg');
     background-size: cover;
@@ -53,6 +53,7 @@ h1 {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
+    width: 100%;
 }
 
 .main-content::before {

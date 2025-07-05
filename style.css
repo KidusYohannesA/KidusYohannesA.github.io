@@ -61,7 +61,7 @@ h1 {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
-    width: 100%;
+    width: 100vw;
 }
 
 .main-content::before {

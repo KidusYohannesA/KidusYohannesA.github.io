@@ -13,7 +13,7 @@ header {
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    box-shadow: 0 4px 6px rgba(204, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(204, 0, 0, 0.702);
     width: 100vw;
     min-height: 50vh;
     display: flex;

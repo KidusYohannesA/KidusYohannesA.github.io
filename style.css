@@ -2,18 +2,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: linear-gradient(135deg, #CC0000 100%, #000000 0%);
     min-height: 100vh;
 }
 
 header {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000000 0%, #CC0000 100%);
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(204, 0, 0, 0.1);
     width: 100vw;
     min-height: 50vh;
     display: flex;

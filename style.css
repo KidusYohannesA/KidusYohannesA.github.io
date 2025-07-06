@@ -21,7 +21,7 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 h1 {

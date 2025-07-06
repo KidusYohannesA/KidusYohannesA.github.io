@@ -17,6 +17,7 @@ header {
     width: 100vw;
     min-height: 50vh;
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;

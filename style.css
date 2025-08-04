@@ -2,14 +2,15 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: linear-gradient(135deg, #CC0000 100%, #000000 0%);
+    background-color: linear-gradient(135deg, #CC0000 100%, #2d2d2d 0%);
     min-height: 100vh;
 }
 
 header {
+    font-family: 'Orbitron', sans-serif;
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #000000 0%, #CC0000 100%);
+    background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -21,7 +22,9 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: content-box;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
 }
 
 h1 {
@@ -31,7 +34,44 @@ h1 {
     letter-spacing: 2px;
 }
 
+/* LinkedIn Icon */
+header a.linkedin-icon {
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    /* Position LinkedIn icon to the left */
+    font-size: 100px;
+    color: #CC0000;
+    /* LinkedIn blue */
+    text-decoration: none;
+    transform: rotate(45deg);
+}
+
+header a.linkedin-icon:hover {
+    color: #005582;
+    /* Darker LinkedIn blue on hover */
+}
+
+/* GitHub Icon */
+header a.github-icon {
+    position: absolute;
+    top: 120px;
+    right: 120px;
+    /* Position GitHub icon to the right */
+    font-size: 100px;
+    color: #2d2d2d;
+    /* Default GitHub color */
+    text-decoration: none;
+    transform: rotate(135deg);
+}
+
+header a.github-icon:hover {
+    color: #000;
+    /* Darker GitHub color on hover */
+}
+
 .welcome-text {
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
     margin-bottom: 30px;
     font-weight: 400;
@@ -53,6 +93,20 @@ h1 {
     transform: scale(1.05);
 }
 
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgb(204, 0, 0), rgba(204, 0, 0, 0.5) 70%);
+    /* Gradient fades from black to transparent */
+    z-index: 1;
+    pointer-events: none;
+    /* Ensure it doesn't block interactions */
+}
+
 .main-content {
     padding: 60px 20px;
     min-height: calc(100vh - 50vh);
@@ -65,6 +119,7 @@ h1 {
     background-attachment: fixed;
     position: relative;
     width: 100vw;
+    box-sizing: border-box;
 }
 
 .main-content::before {
@@ -86,6 +141,7 @@ h1 {
 }
 
 .interactive-button {
+    font-family: 'Orbitron', sans-serif;
     padding: 20px 30px;
     border: none;
     border-radius: 12px;
@@ -96,40 +152,41 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+    z-index: 2;
 }
 
+/* General styling for the interactive button's hover effect */
 .interactive-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
     height: 100%;
+    /* Ensure the pseudo-element spans the full height of the button */
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    /* Creates a subtle gradient effect that moves across the button */
     transition: left 0.5s ease;
+    /* Smooth transition for the pseudo-element's movement */
+}
+
+/* Hover effect for interactive buttons */
+.interactive-button:hover::before {
+    left: 100%;
+    /* Moves the gradient effect to the right when hovered */
 }
 
 .interactive-button:hover::before {
     left: 100%;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.btn-aboutme {
+    background: linear-gradient(135deg, #CC0000 50%, #2d2d2d 50%);
     color: white;
 }
 
-.btn-secondary {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+.btn-portfolio {
+    background: linear-gradient(#2d2d2d 100%);
     color: white;
 }
 
-.btn-success {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    color: white;
-}
-
-.btn-warning {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+.btn-services {
+    background: linear-gradient(405deg, #2d2d2d 50%, #CC0000 50%);
     color: white;
 }
 
@@ -144,8 +201,17 @@ h1 {
 }
 
 @keyframes ripple {
-    to {
-        transform: scale(2);
+    0% {
+        transform: scale(0);
+        /* Start the ripple at scale 0 */
+        opacity: 1;
+        /* Fully visible at the start */
+    }
+
+    100% {
+        transform: scale(4);
+        /* Expand the ripple to scale 4 */
         opacity: 0;
+        /* Fade out the ripple */
     }
 }

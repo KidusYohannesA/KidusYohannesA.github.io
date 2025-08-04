@@ -6,27 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kidus Yohannes's Personal page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <header>
         <h1>Welcome to Kidus Yohannes's Page!</h1>
         <div class="welcome-text">Current Northeastern University Undergrad that loves to Code! </div>
+
         <img src="images/kyohannes@hsph.harvard.edu-1.jpeg" alt="Kidus Yohannes" class="image-placeholder">
+
+        <a href="https://linkedin.com/in/kidus-a-yohannes" target="_blank" class="linkedin-icon">
+            <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+
+        <a href="https://github.com/kidus-a-yohannes" target="_blank" class="github-icon">
+            <i class="fab fa-github fa-2x"></i>
+        </a>
     </header>
 
     <main class="main-content">
         <div class="buttons-container">
-            <button class="interactive-button btn-primary" onclick="handleButtonClick('About')">
+            <button class="interactive-button btn-aboutme" onclick="handleButtonClick('About')">
                 About Me
             </button>
-            <button class="interactive-button btn-secondary" onclick="handleButtonClick('Portfolio')">
+            <button class="interactive-button btn-portfolio" onclick="handleButtonClick('Portfolio')">
                 Portfolio
             </button>
-            <button class="interactive-button btn-success" onclick="handleButtonClick('Contact')">
-                Contact
-            </button>
-            <button class="interactive-button btn-warning" onclick="handleButtonClick('Services')">
+            <button class="interactive-button btn-services" onclick="handleButtonClick('Services')">
                 Services
             </button>
         </div>

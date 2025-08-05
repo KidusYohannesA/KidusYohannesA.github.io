@@ -30,14 +30,25 @@ function handleButtonClick(buttonName) {
         ripple.remove();
     }, 600);
 
-    // Display an alert with the button name 
-    alert(`You clicked: ${buttonName}`);
-    console.log(`${buttonName} button clicked!`);
+    // Scrolls to about page
+    document.addEventListener('DOMContentLoaded', function () {
+        const aboutButton = document.querySelector('.btn-aboutme');
 
-    // switch(buttonName) {
-    //     case 'About':
-    //         window.location.href = 'about.html'; // Navigate to the About page
-    //         break;
-    //     case 'Portfolio':
-    //         // Add functionality for other buttons here
+        if (aboutButton) {
+            aboutButton.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Get the position of the about page
+                const aboutPage = document.querySelector('.page-about');
+                if (aboutPage) {
+                    const aboutPosition = aboutPage.offsetTop;
+
+                    window.scrollTo({
+                        top: aboutPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+    });
 }

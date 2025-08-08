@@ -1,53 +1,42 @@
-/* Add scroll container styling */
+body,
 html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-y: auto;
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #CC0000 100%, #2d2d2d 0%);
-    min-height: 100vh;
-    /* Add scroll snap container */
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-}
-
-/* Create a container for the first page (header + main content) */
-.page-one {
-    height: 100vh;
-    width: 100vw;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-
-/* Keep header styling the same but adjust for flex layout */
 header {
-    font-family: 'Orbitron', sans-serif;
+    /* Welcome banner */
+    font-family: 'Sansation', sans-serif;
+    font-size: 1.2em;
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);
-    background-attachment: fixed;
     color: white;
-    box-shadow: 0 4px 6px rgba(204, 0, 0, 0.702);
-    width: 100vw;
+
+    /* Creates fade affect */
+    background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);
     min-height: 50vh;
-    /* Keep original styling */
+
+    /* Styling */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    position: relative;
 }
 
+/* Welcome Banner likely to change contents */
 h1 {
-    margin: 0 0 20px 0;
+    margin: 0;
     font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.3em;
+    margin-bottom: 30px;
     font-weight: 300;
     letter-spacing: 2px;
 }
@@ -55,50 +44,39 @@ h1 {
 /* LinkedIn Icon */
 header a.linkedin-icon {
     position: absolute;
-    top: 120px;
-    left: 120px;
-    /* Position LinkedIn icon to the left */
+    /* Positions LinkedIn icon to the left of banner */
+    top: 15vh;
+    left: 10vw;
     font-size: 100px;
     color: #CC0000;
-    /* LinkedIn blue */
-    text-decoration: none;
     transform: rotate(45deg);
 }
 
 header a.linkedin-icon:hover {
+    /* Reveal real LinkedIn blue on hover */
     color: #005582;
-    /* Darker LinkedIn blue on hover */
 }
 
 /* GitHub Icon */
 header a.github-icon {
     position: absolute;
-    top: 120px;
-    right: 120px;
     /* Position GitHub icon to the right */
+    top: 15vh;
+    right: 10vw;
     font-size: 100px;
     color: #2d2d2d;
-    /* Default GitHub color */
-    text-decoration: none;
     transform: rotate(135deg);
 }
 
 header a.github-icon:hover {
-    color: #000;
     /* Darker GitHub color on hover */
+    color: #000;
 }
 
-.welcome-text {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5em;
-    margin-bottom: 30px;
-    font-weight: 400;
-    opacity: 0.9;
-}
-
+/* Headshot image placeholder */
 .image-placeholder {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin: 0 auto;
     display: block;
@@ -111,37 +89,7 @@ header a.github-icon:hover {
     transform: scale(1.05);
 }
 
-.main-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, rgb(204, 0, 0), rgba(204, 0, 0, 0.5) 70%);
-    /* Gradient fades from black to transparent */
-    z-index: 1;
-    pointer-events: none;
-    /* Ensure it doesn't block interactions */
-}
-
-.main-content {
-    padding: 60px 20px;
-    min-height: calc(100vh - 50vh);
-    /* Keep original styling - remaining height after header */
-    margin: 0 auto;
-    background-image: url('images/yushang-xu-W9hjnF3M4QM-unsplash.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    width: 100vw;
-    box-sizing: border-box;
-    flex: 1;
-    /* Take remaining space in flex container */
-}
-
+/* Creates a dark tint over the main content */
 .main-content::before {
     content: '';
     position: absolute;
@@ -150,12 +98,24 @@ header a.github-icon:hover {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+}
+
+.main-content {
+    padding: 60px 20px;
+    min-height: 50vh;
+    margin: 0 auto;
+    background-image: url('images/yushang-xu-W9hjnF3M4QM-unsplash.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    box-sizing: border-box;
 }
 
 /* About page section */
 .page-about {
-    height: 100vh;
+    height: auto;
     width: 100vw;
     box-sizing: border-box;
     scroll-snap-align: start;
@@ -168,6 +128,7 @@ header a.github-icon:hover {
     align-items: center;
     overflow-y: auto;
     position: relative;
+    overflow: hidden;
 }
 
 .page-about h2 {
@@ -199,6 +160,221 @@ header a.github-icon:hover {
     margin-bottom: 10px;
 }
 
+/* Project grid styling */
+.projects-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* Project card styling */
+.project-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: #374151;
+    position: relative;
+    height: fit-content;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.3);
+    outline: none;
+}
+
+/* Project image container */
+.project-image-container {
+    position: relative;
+    height: 192px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.project-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* Project content */
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Project status badge */
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 9999px;
+    border: 1px solid;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    width: fit-content;
+    margin-bottom: 12px;
+}
+
+.project-status.active {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-color: #a7f3d0;
+}
+
+.project-status.inprogress {
+    background-color: #fed7aa;
+    color: #9a3412;
+    border-color: #fdba74;
+}
+
+.project-status:hover.active {
+    background-color: #a7f3d0;
+}
+
+.project-status:hover.inprogress {
+    background-color: #fdba74;
+}
+
+/* Project title */
+.project-title {
+    margin: 8px 0 12px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Project description */
+.project-description {
+    margin-bottom: 16px;
+    flex-grow: 1;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* Technologies used */
+.project-technologies {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background-color: #f3f4f6;
+    color: #374151;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Project links */
+.project-links {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    color: #374151;
+}
+
+.project-link:hover {
+    background-color: #CC0000;
+    color: white;
+    border-color: #CC0000;
+}
+
+/* Scroll-triggered animation styles */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays for multiple elements */
+.fade-in-up:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.fade-in-up:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.fade-in-up:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.fade-in-up:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+/* Project card specific animation */
+.project-card.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.project-card.fade-in-up.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Header animation with slight scale effect */
+.page-about h2.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.page-about h2.fade-in-up.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
 .buttons-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -209,7 +385,7 @@ header a.github-icon:hover {
 }
 
 .interactive-button {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Sansation', sans-serif;
     padding: 20px 30px;
     border: none;
     border-radius: 12px;
@@ -255,19 +431,19 @@ header a.github-icon:hover {
 
 /* Styling for the "About Me" button */
 .btn-aboutme {
-    background: linear-gradient(135deg, #CC0000 50%, #2d2d2d 50%);
+    background: linear-gradient(#2d2d2d 100%);
     color: white;
 }
 
 /* Styling for the "Portfolio" button */
 .btn-portfolio {
-    background: linear-gradient(#2d2d2d 100%);
+    background: linear-gradient(135deg, #2d2d2d 20%, #CC0000 100%);
     color: white;
 }
 
 /* Styling for the "Services" button */
 .btn-services {
-    background: linear-gradient(405deg, #2d2d2d 50%, #CC0000 50%);
+    background: linear-gradient(#CC0000 100%);
     color: white;
 }
 

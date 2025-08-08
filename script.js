@@ -19,8 +19,8 @@ function handleButtonClick(buttonName) {
         border-radius: 50%; /* Make the ripple circular */
         transform: scale(0); /* Start the ripple at scale 0 */
         animation: ripple 0.6s ease-out; /* Animate the ripple scaling up */
-        pointer-events: none; /* Prevent the ripple from interfering with clicks */
-    `;
+        pointer-events: none; /* Prevent the ripple from interfering with clicks */`
+        ;
 
     // Add the ripple to the button
     button.appendChild(ripple);
@@ -29,26 +29,4 @@ function handleButtonClick(buttonName) {
     setTimeout(() => {
         ripple.remove();
     }, 600);
-
-    // Scrolls to about page
-    document.addEventListener('DOMContentLoaded', function () {
-        const aboutButton = document.querySelector('.btn-aboutme');
-
-        if (aboutButton) {
-            aboutButton.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                // Get the position of the about page
-                const aboutPage = document.querySelector('.page-about');
-                if (aboutPage) {
-                    const aboutPosition = aboutPage.offsetTop;
-
-                    window.scrollTo({
-                        top: aboutPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        }
-    });
 }

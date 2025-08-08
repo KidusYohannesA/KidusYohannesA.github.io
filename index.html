@@ -7,15 +7,20 @@
     <title>Kidus Yohannes's Personal page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="page-one">
+
+    <section id="main">
         <header>
-            <h1>Welcome to Kidus Yohannes's Page!</h1>
-            <div class="welcome-text">Current Northeastern University Undergrad that loves to Code! </div>
+            <h1><b>Welcome to Kidus Yohannes's Page</b></h1>
+            <h2><b>Current Northeastern University Undergrad that loves to Code!</b></h2>
 
             <img src="images/kyohannes@hsph.harvard.edu-1.jpeg" alt="Kidus Yohannes" class="image-placeholder">
 
@@ -31,7 +36,7 @@
         <main class="main-content">
             <div class="buttons-container">
                 <a href="#about" class="interactive-button btn-aboutme">About Me</a>
-
+                <!-- Have "About Me" include projects, change prjects button to experiance-->
                 <button class="interactive-button btn-portfolio" onclick="handleButtonClick('Portfolio')">
                     Portfolio
                 </button>
@@ -40,17 +45,116 @@
                 </button>
             </div>
         </main>
-    </div>
+    </section>
 
     <!-- Page 2: About content -->
     <section class="page-about" id="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <!-- Insert your about.html content here -->
-            <p>Your about content goes here...</p>
-            <!-- Add all the content from your about.html file -->
+            <p> I'm Kidus Yohannes - passionate about delivering seamless end-to-end experiences by
+                bridging the gap
+                between design and functionality.</p>
+
+            <!-- Projects Section -->
+            <h3> Featured Projects</h3>
+            <h4> Some of my recent work</h4>
+
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <article class="project-card" tabindex="0">
+                    <div class="project-image-container">
+                        <img src="https://placehold.co/600x400/gray/white?text=Project+1" alt="Screenshot of Project 1"
+                            class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-status active">
+                            ● Active
+                        </div>
+
+                        <h3 class="project-title">SwiftBudget</h3>
+
+                        <p class="project-description">
+                            A responsive portfolio website built with technologies,
+                            featuring smooth animations and interactive elements.
+                        </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 Live Demo</a>
+                            <a href="#" class="project-link">📁 GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="project-card" tabindex="1">
+                    <div class="project-image-container">
+                        <img src="https://placehold.co/600x400/gray/white?text=Project+2" alt="Screenshot of Project 2"
+                            class="project-image">
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-status active">
+                            ● Active
+                        </div>
+
+                        <h3 class="project-title">SpreadSheet</h3>
+                        <p class="project-description">
+                            A full-stack e-commerce solution with user authentication,
+                            payment processing, and inventory management.
+                        </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 Live Demo</a>
+                            <a href="#" class="project-link">📁 GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="project-card" tabindex="2">
+                    <div class="project-image-container">
+                        <img src="https://placehold.co/600x400/gray/white?text=Project+3" alt="Screenshot of Project 3"
+                            class="project-image">
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-status inprogress">
+                            ● In Progress
+                        </div>
+
+                        <h3 class="project-title">Facial Recognition</h3>
+
+                        <p class="project-description">
+                            A full-stack e-commerce solution with user authentication,
+                            payment processing, and inventory management.
+                        </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 Live Demo</a>
+                            <a href="#" class="project-link">📁 GitHub</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

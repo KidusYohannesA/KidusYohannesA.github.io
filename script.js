@@ -30,3 +30,33 @@ function handleButtonClick(buttonName) {
         ripple.remove();
     }, 600);
 }
+// Start of designing animations for the about page
+// Function to check if an element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+    );
+}
+
+const fadeElements = document.querySelectorAll('.fade-up, .fade-right');
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    },
+    { threshold: 0.1 }
+);
+
+fadeElements.forEach(el => observer.observe(el));
+
+// Listen for scroll and load events
+window.addEventListener('scroll', checkFadeUp);
+window.addEventListener('load', checkFadeUp);

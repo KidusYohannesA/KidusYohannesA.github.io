@@ -21,15 +21,7 @@
 .page-about h3 {
     font-family: 'Sansation', sans-serif;
     font-size: 2em;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-}
-
-/* About page h4 header */
-.page-about h4 {
-    font-family: 'Sansation', sans-serif;
-    font-size: 1.5em;
-    margin-bottom: 40px;
+    margin-bottom: -20px;
     letter-spacing: 2px;
 }
 
@@ -188,4 +180,27 @@
     background-color: #CC0000;
     color: white;
     border-color: #CC0000;
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 1s ease-out;
+}
+
+/* When active, fade in and move up */
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-right {
+    transform: translateX(-150px);
+    transition: opacity 0.6s ease-out, transform 1s ease-out;
+}
+
+/* When active, fade in and move up */
+.fade-right.active {
+    transform: translateX(0);
 }

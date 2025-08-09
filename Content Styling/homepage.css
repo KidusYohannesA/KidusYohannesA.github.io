@@ -1,0 +1,175 @@
+header {
+    /* Welcome banner */
+    font-family: 'Sansation', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    color: white;
+
+    /* Creates fade affect */
+    background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);
+    min-height: 50vh;
+
+    /* Styling */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Welcome Banner likely to change contents */
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* LinkedIn Icon */
+header a.linkedin-icon {
+    position: absolute;
+    /* Positions LinkedIn icon to the left of banner */
+    top: 15vh;
+    left: 10vw;
+    font-size: 100px;
+    color: #CC0000;
+    transform: rotate(45deg);
+}
+
+header a.linkedin-icon:hover {
+    /* Reveal real LinkedIn blue on hover */
+    color: #005582;
+}
+
+/* GitHub Icon */
+header a.github-icon {
+    position: absolute;
+    /* Position GitHub icon to the right */
+    top: 15vh;
+    right: 10vw;
+    font-size: 100px;
+    color: #2d2d2d;
+    transform: rotate(135deg);
+}
+
+header a.github-icon:hover {
+    /* Darker GitHub color on hover */
+    color: #000;
+}
+
+/* Headshot image placeholder */
+.image-placeholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.image-placeholder:hover {
+    transform: scale(1.05);
+}
+
+/* Creates a dark tint over the main content */
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Main content area */
+.main-content {
+    padding: 60px 20px;
+    min-height: 50vh;
+    margin: 0 auto;
+    background-image: url('../images/yushang-xu-W9hjnF3M4QM-unsplash.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Buttons container */
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Button styles */
+.interactive-button {
+    font-family: 'Sansation', sans-serif;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0.7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+}
+
+/* General styling for the interactive button's hover effect */
+.interactive-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+/* Hover effect for interactive buttons */
+.interactive-button:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.interactive-button:hover::before {
+    left: 100%;
+}
+
+/* Styling for the "About Me" button */
+.btn-aboutme {
+    background: linear-gradient(#2d2d2d 100%);
+    color: white;
+}
+
+/* Styling for the "Portfolio" button */
+.btn-portfolio {
+    background: linear-gradient(135deg, #2d2d2d 20%, #CC0000 100%);
+    color: white;
+}
+
+/* Styling for the "Services" button */
+.btn-services {
+    background: linear-gradient(#CC0000 100%);
+    color: white;
+}

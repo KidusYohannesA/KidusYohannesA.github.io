@@ -1,0 +1,191 @@
+/* About page section */
+.page-about {
+    height: auto;
+    background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);
+    color: white;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* About page h2 header */
+.page-about h2 {
+    font-family: 'Sansation', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* About page h3 header */
+.page-about h3 {
+    font-family: 'Sansation', sans-serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* About page h4 header */
+.page-about h4 {
+    font-family: 'Sansation', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* About page content */
+.about-content {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* About me content */
+.about-content p {
+    margin-bottom: 20px;
+    font-family: 'Sansation', sans-serif;
+}
+
+/* Project grid styling */
+.projects-grid {
+    display: grid;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+/* Project card styling */
+.project-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    color: #374151;
+    position: relative;
+    height: fit-content;
+}
+
+/* Card trandormation effects */
+.project-card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Project image container */
+.project-image-container {
+    position: relative;
+    height: 250px;
+    width: 100%;
+}
+
+/* Project image styles */
+.project-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* Project card content */
+.project-content {
+    padding: 20px;
+}
+
+/* Project status badge */
+.project-status {
+    border-radius: 9999px;
+    border: 1px solid;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+/* Active and In Progress status styles */
+.project-status.active {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-color: #a7f3d0;
+}
+
+.project-status.inprogress {
+    background-color: #fed7aa;
+    color: #9a3412;
+    border-color: #fdba74;
+}
+
+.project-status:hover.active {
+    background-color: #a7f3d0;
+}
+
+.project-status:hover.inprogress {
+    background-color: #fdba74;
+}
+
+/* Project title */
+.project-title {
+    margin: 8px 0 12px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* Project description */
+.project-description {
+    margin-bottom: 16px;
+    flex-grow: 1;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* Technologies used */
+.project-technologies {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Technology tag styles */
+.tech-tag {
+    background-color: #f3f4f6;
+    color: #374151;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Project links */
+.project-links {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-link {
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    color: #374151;
+}
+
+.project-link:hover {
+    background-color: #CC0000;
+    color: white;
+    border-color: #CC0000;
+}

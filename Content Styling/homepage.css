@@ -48,6 +48,13 @@ header a.linkedin-icon:hover {
     color: #005582;
 }
 
+/* Container for LinkedIn SVG */
+.linkedin-svg-container {
+    position: absolute;
+    top: 30vh;
+    left: 22vw;
+}
+
 /* GitHub Icon */
 header a.github-icon {
     position: absolute;
@@ -62,6 +69,51 @@ header a.github-icon {
 header a.github-icon:hover {
     /* Darker GitHub color on hover */
     color: #000;
+}
+
+/* Container for GitHub SVG */
+.github-svg-container {
+    position: absolute;
+    top: 15vh;
+    right: 22vw;
+}
+
+/* Shared animations */
+/* Applies a pulsing effect to icons */
+.pulse-animation {
+    animation: pulse 5s infinite;
+}
+
+/* Applies a drawing effect to SVG paths */
+.draw-path {
+    animation: draw 10s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: 300;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 /* Headshot image placeholder */

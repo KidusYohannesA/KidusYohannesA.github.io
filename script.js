@@ -60,6 +60,6 @@ function renderPDF(url, pdfViewerId) {
 
 // Load the PDF.js library and then render the PDF
 loadPDFjsLibrary(() => {
-    const url = 'assets/documents/Kidus%20Yohannes%20-%20Fall25%20Resume.pdf';
+    const url = 'assets/documents/ResumeOfKidus.pdf';
     renderPDF(url, 'pdf-viewer');
 });

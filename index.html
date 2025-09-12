@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kidus Yohannes's Portfolio</title>
-    <!--Linking css files-->
-    <link rel="stylesheet" href="Content Styling/site.css">
-    <link rel="stylesheet" href="Content Styling/homepage.css">
-    <link rel="stylesheet" href="Content Styling/aboutpage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!--Linking css files-->
+    <link rel="stylesheet" href="assets/styles/site.css">
+    <link rel="stylesheet" href="assets/styles/homepage.css">
+    <link rel="stylesheet" href="assets/styles/aboutpage.css">
+    <link rel="stylesheet" href="assets/styles/resumepage.css">
+    <link rel="stylesheet" href="assets/styles/gallerypage.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +28,7 @@
             <h1><b>Welcome to Kidus Yohannes's Page</b></h1>
             <h2><b>Current Northeastern University Undergrad that loves to Code!</b></h2>
 
-            <img src="images/kyohannes@hsph.harvard.edu-1.jpeg" alt="Kidus Yohannes" class="image-placeholder">
+            <img src="assets/images/kyohannes@hsph.harvard.edu-1.jpeg" alt="Kidus Yohannes" class="image-placeholder">
 
             <a href="https://linkedin.com/in/kidus-a-yohannes" target="_blank" class="linkedin-icon">
                 <i class="fab fa-linkedin fa-2x"></i>
@@ -72,13 +75,8 @@
         <main class="main-content">
             <div class="buttons-container">
                 <a href="#about" class="interactive-button btn-aboutme">About Me</a>
-                <!-- Have "About Me" include projects, change prjects button to experiance-->
-                <button class="interactive-button btn-portfolio" onclick="handleButtonClick('Portfolio')">
-                    Portfolio
-                </button>
-                <button class="interactive-button btn-services" onclick="handleButtonClick('Services')">
-                    Services
-                </button>
+                <a href="#resume" class="interactive-button btn-resume"> Resume</a>
+                <a href="#gallery" class="interactive-button btn-gallery">Gallery</a>
             </div>
         </main>
     </section>
@@ -99,7 +97,7 @@
                 <!-- Project Card 1 -->
                 <article class="project-card fade-up" tabindex="0">
                     <div class="project-image-container">
-                        <img src="images/SpreadSheetUI.png" alt="Screenshot of Project 1" class="project-image">
+                        <img src="assets/images/SpreadSheetUI.png" alt="Screenshot of Project 1" class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-status active">
@@ -117,9 +115,11 @@
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
+                            <a href="https://github.com/neu-cs4530-fall2024/Team707-project" class="project-link">🔗
+                                Github</a>
                         </div>
                     </div>
                 </article>
@@ -127,8 +127,8 @@
                 <!-- Project Card 2 -->
                 <article class="project-card fade-up" tabindex="1">
                     <div class="project-image-container">
-                        <img src="https://placehold.co/600x400/gray/white?text=Project+2" alt="Screenshot of Project 2"
-                            class="project-image">
+                        <img src="assets/images/SwiftBudgetUI.png" alt="Screenshot of Project 2" class="project-image"
+                            style="object-position: 51.5% 48.5%;">
                     </div>
 
                     <div class="project-content">
@@ -136,20 +136,16 @@
                             ● Active
                         </div>
 
-                        <h3 class="project-title">SpreadSheet</h3>
+                        <h3 class="project-title">SwiftBudget</h3>
                         <p class="project-description">
-                            A full-stack e-commerce solution with user authentication,
-                            payment processing, and inventory management.
+                            A full-stack IOS budgeting solution with user authentication and family circles.
                         </p>
                         <div class="project-technologies">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe API</span>
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">FireBase</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
-                            <a href="#" class="project-link">📁 GitHub</a>
+                            <a href="https://github.com/pokhrel-sh/SwiftBudget" class="project-link">🔗 GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -169,23 +165,38 @@
                         <h3 class="project-title">Facial Recognition</h3>
 
                         <p class="project-description">
-                            A full-stack e-commerce solution with user authentication,
-                            payment processing, and inventory management.
+                            A full-stack facial recognition web application
                         </p>
                         <div class="project-technologies">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe API</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
-                            <a href="#" class="project-link">📁 GitHub</a>
+                            <a href="https://github.com/KidusYohannesA/Facial-Recognition" class="project-link">🔗
+                                Github</a>
                         </div>
                     </div>
                 </article>
             </div>
         </div>
+    </section>
+
+    <!-- Page 3: Resume page -->
+    <section class="page-resume" id="resume">
+        <h2 class="resume-header fade-up">My Resume</h2>
+        <!-- PDF Viewer Container -->
+        <div class="resume-box">
+            <div id="pdf-viewer" class="resume-content"></div>
+        </div>
+    </section>
+
+    <!-- Page 4: Gallery page -->
+    <section class="page-gallery" id="gallery">
+        <h2 class="gallery-header fade-up"> Gallery page coming soon!</h2>
     </section>
     <script src="script.js"></script>
 </body>

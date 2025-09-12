@@ -1,7 +1,7 @@
 /* About page section */
 .page-about {
     height: auto;
-    background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);
+    /*background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);*/
     color: white;
     padding: 60px 20px;
     display: flex;

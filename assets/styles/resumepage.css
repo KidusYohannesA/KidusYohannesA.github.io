@@ -1,0 +1,65 @@
+/* Resume page section */
+.page-resume {
+    height: 100vh;
+    /*background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);*/
+    color: white;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Resume page h2 header */
+.resume-header {
+    font-family: 'Sansation', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Style for the resume-content container */
+.resume-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for the resume box */
+.resume-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+    height: 75vh;
+    padding: 5px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* Style for the PDF viewer */
+.resume-content canvas {
+    display: block;
+    max-width: auto;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+}
+
+/* Style for the PDF viewer container */
+#pdf-viewer {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}

@@ -1,0 +1,33 @@
+/* Gallery Page Styles */
+.page-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-header {
+    font-family: 'Sansation', sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}

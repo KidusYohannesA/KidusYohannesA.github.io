@@ -46,12 +46,19 @@ function renderPDF(url, pdfViewerId) {
 
     pdfjsLib.getDocument(url).promise.then((pdf) => {
         pdf.getPage(1).then((page) => {
-            const scale = 2.0;
-            const viewport = page.getViewport({ scale: scale }); // Adjust scale as needed
+            const unscaledViewport = page.getViewport({ scale: 1.0 });
+
+            // Calculate scale to fit the container width
+            const containerWidth = pdfViewer.clientWidth - 40;
+            const scale = containerWidth / unscaledViewport.width;
+
+            const viewport = page.getViewport({ scale: scale });
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
             canvas.height = viewport.height;
             canvas.width = viewport.width;
+
+            //pdfViewer.innerHTML = '';
             pdfViewer.appendChild(canvas);
             page.render({ canvasContext: context, viewport: viewport });
         });
@@ -60,6 +67,11 @@ function renderPDF(url, pdfViewerId) {
 
 // Load the PDF.js library and then render the PDF
 loadPDFjsLibrary(() => {
-    const url = 'assets/documents/ResumeOfKidus.pdf';
+    const url = 'assets/documents/Kidus Yohannes Resume.pdf';
     renderPDF(url, 'pdf-viewer');
 });
+
+// Detect Windows OS and apply custom scrollbar class
+if (navigator.userAgent.indexOf("Windows") != -1) {
+    document.documentElement.classList.add("windows-user");
+}

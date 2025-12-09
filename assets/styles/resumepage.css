@@ -22,8 +22,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 100px;
+    height: auto;
+    width: 100%;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -33,14 +33,14 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: auto;
+    width: 60vw;
     height: 75vh;
     padding: 5px;
     background-color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 50px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -57,7 +57,7 @@
 #pdf-viewer {
     width: 100%;
     height: auto;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;

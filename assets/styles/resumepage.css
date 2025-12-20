@@ -1,8 +1,6 @@
 /* Resume page section */
 .page-resume {
     height: 100vh;
-    /*background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);*/
-    color: white;
     padding: 60px 20px;
     display: flex;
     flex-direction: column;
@@ -15,6 +13,7 @@
     font-size: 2.5em;
     margin-bottom: 40px;
     letter-spacing: 2px;
+    color: #ffffff;
 }
 
 /* Style for the resume-content container */
@@ -42,6 +41,15 @@
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     overflow-y: auto;
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.resume-box::-webkit-scrollbar {
+    display: none;
 }
 
 /* Style for the PDF viewer */
@@ -61,5 +69,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
 }

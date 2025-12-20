@@ -1,4 +1,3 @@
-// Start of designing animations for the about page
 // Function to check if an element is in viewport
 // This function calculates the position of an element relative to the viewport
 // and returns true if the element is at least partially visible.
@@ -28,7 +27,6 @@ const observer = new IntersectionObserver(
 );
 
 // Observe each element in the fadeElements NodeList
-// This will apply the IntersectionObserver to each element.
 fadeElements.forEach(el => observer.observe(el));
 
 
@@ -71,7 +69,97 @@ loadPDFjsLibrary(() => {
     renderPDF(url, 'pdf-viewer');
 });
 
-// Detect Windows OS and apply custom scrollbar class
-if (navigator.userAgent.indexOf("Windows") != -1) {
-    document.documentElement.classList.add("windows-user");
+// Configuration for testing
+const FLOATING_CONFIG = {
+    spawnIntervalMs: 8000,
+    maxElements: 5,
+    size: 120,
+    duration: 15000,
+    animations: [
+        { file: 'assets/animations/astronot.json', type: 'wobble' },
+        { file: 'assets/animations/rocket.json', type: 'straight' }
+    ]
+};
+
+const floatingContainer = document.getElementById('floating-container');
+let activeFloatingElements = 0;
+
+// Spawn a floating animation
+function spawnFloatingElement() {
+    if (activeFloatingElements >= FLOATING_CONFIG.maxElements) return;
+
+    const anim = FLOATING_CONFIG.animations[Math.floor(Math.random() * FLOATING_CONFIG.animations.length)];
+
+    const edge = Math.floor(Math.random() * 4);
+    const vw = window.innerWidth;
+    const docHeight = document.documentElement.scrollHeight;
+    const scrollY = window.scrollY;
+
+    // Spawn within visible area + some buffer
+    const visibleTop = scrollY - 100;
+    const visibleBottom = scrollY + window.innerHeight + 100;
+
+    let startX, startY, endX, endY;
+
+    switch (edge) {
+        case 0: // Top edge - move down
+            startX = Math.random() * vw;
+            startY = visibleTop;
+            endX = (Math.random() - 0.5) * vw * 0.5;
+            endY = window.innerHeight + 200;
+            break;
+        case 1: // Right edge - move left
+            startX = vw + FLOATING_CONFIG.size;
+            startY = visibleTop + Math.random() * window.innerHeight;
+            endX = -(vw + FLOATING_CONFIG.size * 2);
+            endY = (Math.random() - 0.5) * window.innerHeight * 0.5;
+            break;
+        case 2: // Bottom edge - move up
+            startX = Math.random() * vw;
+            startY = visibleBottom;
+            endX = (Math.random() - 0.5) * vw * 0.5;
+            endY = -(window.innerHeight + 200);
+            break;
+        case 3: // Left edge - move right
+            startX = -FLOATING_CONFIG.size;
+            startY = visibleTop + Math.random() * window.innerHeight;
+            endX = vw + FLOATING_CONFIG.size * 2;
+            endY = (Math.random() - 0.5) * window.innerHeight * 0.5;
+            break;
+    }
+
+    // Create lottie-player element
+    const player = document.createElement('lottie-player');
+    player.setAttribute('src', anim.file);
+    player.setAttribute('background', 'transparent');
+    player.setAttribute('speed', '1');
+    player.setAttribute('loop', '');
+    player.setAttribute('autoplay', '');
+    player.classList.add('floating-element');
+
+    // Set position and animation
+    player.style.left = startX + 'px';
+    player.style.top = startY + 'px';
+    player.style.width = FLOATING_CONFIG.size + 'px';
+    player.style.height = FLOATING_CONFIG.size + 'px';
+    player.style.setProperty('--end-x', endX + 'px');
+    player.style.setProperty('--end-y', endY + 'px');
+
+    // Apply appropriate animation
+    const animName = anim.type === 'wobble' ? 'float-wobble' : 'float-straight';
+    player.style.animation = `${animName} ${FLOATING_CONFIG.duration}ms linear forwards`;
+
+    floatingContainer.appendChild(player);
+    activeFloatingElements++;
+
+    // Remove after animation completes
+    setTimeout(() => {
+        player.remove();
+        activeFloatingElements--;
+    }, FLOATING_CONFIG.duration);
 }
+
+// Start spawning floating elements
+setInterval(spawnFloatingElement, FLOATING_CONFIG.spawnIntervalMs);
+// Spawn one immediately
+spawnFloatingElement();

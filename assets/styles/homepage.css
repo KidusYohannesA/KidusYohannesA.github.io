@@ -6,7 +6,7 @@ header {
     color: white;
 
     /* Creates fade affect */
-    background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);
+    background: transparent;
     min-height: 50vh;
 
     /* Styling */
@@ -32,88 +32,51 @@ h2 {
     letter-spacing: 2px;
 }
 
+/* Icon Group - Wrapper for icon + animation */
+.icon-group {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* LinkedIn Group - Positioned left */
+.linkedin-group {
+    top: 12vh;
+    left: 80%;
+}
+
+/* GitHub Group - Positioned right */
+.github-group {
+    top: 12vh;
+    right: 80%;
+}
+
 /* LinkedIn Icon */
-header a.linkedin-icon {
-    position: absolute;
-    /* Positions LinkedIn icon to the left of banner */
-    top: 15vh;
-    left: 10vw;
-    font-size: 100px;
+.icon-group a.linkedin-icon {
+    font-size: 80px;
     color: #CC0000;
-    transform: rotate(45deg);
+    transform: rotate(0deg);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-header a.linkedin-icon:hover {
-    /* Reveal real LinkedIn blue on hover */
+.icon-group a.linkedin-icon:hover {
     color: #005582;
-}
-
-/* Container for LinkedIn SVG */
-.linkedin-svg-container {
-    position: absolute;
-    top: 30vh;
-    left: 22vw;
+    transform: scale(1.1);
 }
 
 /* GitHub Icon */
-header a.github-icon {
-    position: absolute;
-    /* Position GitHub icon to the right */
-    top: 15vh;
-    right: 10vw;
-    font-size: 100px;
-    color: #2d2d2d;
-    transform: rotate(135deg);
+.icon-group a.github-icon {
+    font-size: 80px;
+    color: #ffffff;
+    transform: rotate(0deg);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-header a.github-icon:hover {
-    /* Darker GitHub color on hover */
-    color: #000;
-}
-
-/* Container for GitHub SVG */
-.github-svg-container {
-    position: absolute;
-    top: 15vh;
-    right: 22vw;
-}
-
-/* Shared animations */
-/* Applies a pulsing effect to icons */
-.pulse-animation {
-    animation: pulse 5s infinite;
-}
-
-/* Applies a drawing effect to SVG paths */
-.draw-path {
-    animation: draw 10s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes draw {
-    from {
-        stroke-dashoffset: 200;
-    }
-
-    to {
-        stroke-dashoffset: 0;
-    }
+.icon-group a.github-icon:hover {
+    color: #514f52;
+    transform: scale(1.1);
 }
 
 /* Headshot image placeholder */
@@ -126,21 +89,12 @@ header a.github-icon:hover {
     object-fit: cover;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .image-placeholder:hover {
     transform: scale(1.05);
-}
-
-/* Creates a dark tint over the main content */
-.main-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
 }
 
 /* Main content area */
@@ -148,11 +102,6 @@ header a.github-icon:hover {
     padding: 60px 20px;
     min-height: 50vh;
     margin: 0 auto;
-    background-image: url('../images/yushang-xu-W9hjnF3M4QM-unsplash.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     position: relative;
     box-sizing: border-box;
 }
@@ -165,27 +114,48 @@ header a.github-icon:hover {
     margin-top: 40px;
 }
 
-/* Button styles */
+/* Button styles - Apple Glass Effect */
 .interactive-button {
     font-family: 'Sansation', sans-serif;
     padding: 20px 30px;
-    border: none;
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
     font-size: 1.1em;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    opacity: 0.7;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
     text-decoration: none;
     text-align: center;
-    justify-content: center;
+
+    /* Core Glass Effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(20px);
+
+    /* Depth & Shadows */
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    /* Text */
+    color: white;
+
+    /* Smooth Transitions */
+    transition: all 0.3s ease-in-out;
 }
 
-/* General styling for the interactive button's hover effect */
+/* Hover effect for interactive buttons */
+.interactive-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Shimmer effect on hover */
 .interactive-button::before {
     content: '';
     position: absolute;
@@ -193,35 +163,10 @@ header a.github-icon:hover {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
-}
-
-/* Hover effect for interactive buttons */
-.interactive-button:hover {
-    opacity: 1;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .interactive-button:hover::before {
     left: 100%;
-}
-
-/* Styling for the "About Me" button */
-.btn-aboutme {
-    background: linear-gradient(#2d2d2d 100%);
-    color: white;
-}
-
-/* Styling for the "Portfolio" button */
-.btn-resume {
-    background: linear-gradient(135deg, #2d2d2d 20%, #CC0000 100%);
-    color: white;
-}
-
-/* Styling for the "Services" button */
-.btn-gallery {
-    background: linear-gradient(#CC0000 100%);
-    color: white;
 }

@@ -19,9 +19,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
         rel="stylesheet">
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
+
+    <!-- Container for floating animations -->
+    <div class="floating-container" id="floating-container"></div>
 
     <section id="main">
         <header>
@@ -30,45 +36,16 @@
 
             <img src="assets/images/kyohannes@hsph.harvard.edu-1.jpeg" alt="Kidus Yohannes" class="image-placeholder">
 
-            <a href="https://linkedin.com/in/kidus-a-yohannes" target="_blank" class="linkedin-icon">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-
-            <div class="linkedin-svg-container">
-                <svg class="pulse-animation" width="200" height="100" viewBox="0 0 300 100">
-                    <path class="draw-path" d="M10 80 Q100 10 210 100" stroke="white" stroke-width="2" fill="none"
-                        marker-end="url(#arrowhead)" transform="scale(-1, -1) translate(-240, -100)"
-                        stroke-dasharray="8 4" stroke-dashoffset="0" />
-
-                    <text x="115" y="10" fill="white" font-size="15" text-anchor="start" dominant-baseline="text-top">
-                        Click here for my Linkedin!
-                    </text>
-
-                    <defs>
-                        <marker id="arrowhead" markerWidth="15" markerHeight="10.5" refX="13.5" refY="5.25"
-                            orient="auto">
-                            <polygon class="fadding-arrowhead" points="0 0, 15 5.25, 0 10.5" fill="white" />
-                        </marker>
-                        <filter id="chalk-blur" x="-10%" y="-10%" width="120%" height="120%">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation=".6" />
-                        </filter>
-                    </defs>
-                </svg>
+            <div class="icon-group linkedin-group">
+                <a href="https://linkedin.com/in/kidus-a-yohannes" target="_blank" class="linkedin-icon">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
             </div>
 
-            <a href="https://github.com/KidusYohannesA" target="_blank" class="github-icon">
-                <i class="fab fa-github fa-2x"></i>
-            </a>
-
-            <div class="github-svg-container">
-                <svg class="pulse-animation" width="200" height="100" viewBox="-50 0 300 100">
-                    <path class="draw-path" d="M10 80 Q100 10 210 100" stroke="white" stroke-width="2" fill="none"
-                        marker-end="url(#arrowhead)" stroke-dasharray="8 4" stroke-dashoffset="0" />
-
-                    <text x="-35" y="100" fill="white" font-size="15" text-anchor="start" dominant-baseline="hanging">
-                        Click here for my Github!
-                    </text>
-                </svg>
+            <div class="icon-group github-group">
+                <a href="https://github.com/KidusYohannesA" target="_blank" class="github-icon">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
             </div>
         </header>
 

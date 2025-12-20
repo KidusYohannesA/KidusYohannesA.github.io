@@ -1,8 +1,6 @@
 /* About page section */
 .page-about {
     height: auto;
-    /*background: linear-gradient(135deg, #2d2d2d 0%, #CC0000 100%);*/
-    color: white;
     padding: 60px 20px;
     display: flex;
     flex-direction: column;
@@ -15,6 +13,7 @@
     font-size: 2.5em;
     margin-bottom: 40px;
     letter-spacing: 2px;
+    color: #ffffff;
 }
 
 /* About page h3 header */
@@ -23,6 +22,8 @@
     font-size: 2em;
     margin-bottom: -20px;
     letter-spacing: 2px;
+    color: #ffffff;
+
 }
 
 /* About page content */
@@ -36,6 +37,7 @@
 .about-content p {
     margin-bottom: 20px;
     font-family: 'Sansation', sans-serif;
+    color: #ffffff;
 }
 
 /* Project grid styling */
@@ -47,14 +49,40 @@
 
 /* Project card styling */
 .project-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 1);
     border-radius: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     transition: all 0.3s ease;
-    color: #374151;
     position: relative;
     height: fit-content;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.project-card::-webkit-scrollbar {
+    display: none;
+}
+
+/* Project title */
+.project-card .project-title {
+    margin: 8px 0 12px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: 'Sansation', sans-serif;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+/* Project description */
+.project-card .project-description {
+    margin-bottom: 16px;
+    flex-grow: 1;
+    font-size: 14px;
+    font-family: 'Sansation', sans-serif;
+    color: #000000;
+    line-height: 1.5;
 }
 
 /* Card trandormation effects */
@@ -118,23 +146,6 @@
 
 .project-status:hover.inprogress {
     background-color: #fdba74;
-}
-
-/* Project title */
-.project-title {
-    margin: 8px 0 12px 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #374151;
-}
-
-/* Project description */
-.project-description {
-    margin-bottom: 16px;
-    flex-grow: 1;
-    font-size: 14px;
-    color: #6b7280;
-    line-height: 1.5;
 }
 
 /* Technologies used */

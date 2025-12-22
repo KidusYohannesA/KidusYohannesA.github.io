@@ -9,7 +9,6 @@
 
 /* Resume page h2 header */
 .resume-header {
-    font-family: 'Sansation', sans-serif;
     font-size: 2.5em;
     margin-bottom: 40px;
     letter-spacing: 2px;
@@ -55,7 +54,7 @@
 /* Style for the PDF viewer */
 .resume-content canvas {
     display: block;
-    max-width: auto;
+    max-width: none;
     max-height: 100%;
     height: auto;
     width: auto;

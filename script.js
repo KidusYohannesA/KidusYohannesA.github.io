@@ -1,14 +1,3 @@
-// Function to check if an element is in viewport
-// This function calculates the position of an element relative to the viewport
-// and returns true if the element is at least partially visible.
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.bottom >= 0
-    );
-}
-
 // These elements will be animated when they come into view.
 const fadeElements = document.querySelectorAll('.fade-up, .fade-right');
 
@@ -92,7 +81,6 @@ function spawnFloatingElement() {
 
     const edge = Math.floor(Math.random() * 4);
     const vw = window.innerWidth;
-    const docHeight = document.documentElement.scrollHeight;
     const scrollY = window.scrollY;
 
     // Spawn within visible area + some buffer

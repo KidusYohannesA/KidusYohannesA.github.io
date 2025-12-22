@@ -1,15 +1,20 @@
 html {
     min-height: 100%;
     scroll-behavior: smooth;
-    overflow-y: overlay;
+    overflow-y: auto;
     overflow-x: hidden;
     background: #000000 url('../images/starsbackground.webp') top center / cover no-repeat fixed;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 body {
     margin: 0;
     padding: 0;
     min-height: 100%;
+    font-family: 'Sansation', sans-serif;
 }
 
 /* Shared gradient background for About and Resume sections */
@@ -18,19 +23,11 @@ body {
     background: transparent;
     background-attachment: fixed;
     background-size: cover;
-
 }
 
 /* Hide scrollbar for all users while keeping scroll functionality */
 html::-webkit-scrollbar {
     display: none;
-}
-
-html {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
 }
 
 /* Floating Animations */

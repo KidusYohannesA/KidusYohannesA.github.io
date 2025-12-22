@@ -1,6 +1,5 @@
 header {
     /* Welcome banner */
-    font-family: 'Sansation', sans-serif;
     font-size: 1.2em;
     text-align: center;
     color: white;
@@ -116,7 +115,6 @@ h2 {
 
 /* Button styles - Apple Glass Effect */
 .interactive-button {
-    font-family: 'Sansation', sans-serif;
     padding: 20px 30px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;

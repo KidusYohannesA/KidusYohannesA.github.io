@@ -9,7 +9,6 @@
 
 /* About page h2 header */
 .page-about h2 {
-    font-family: 'Sansation', sans-serif;
     font-size: 2.5em;
     margin-bottom: 40px;
     letter-spacing: 2px;
@@ -18,12 +17,10 @@
 
 /* About page h3 header */
 .page-about h3 {
-    font-family: 'Sansation', sans-serif;
     font-size: 2em;
-    margin-bottom: -20px;
+    margin-bottom: 20px;
     letter-spacing: 2px;
     color: #ffffff;
-
 }
 
 /* About page content */
@@ -36,7 +33,6 @@
 /* About me content */
 .about-content p {
     margin-bottom: 20px;
-    font-family: 'Sansation', sans-serif;
     color: #ffffff;
 }
 
@@ -70,7 +66,6 @@
     margin: 8px 0 12px 0;
     font-size: 1.25rem;
     font-weight: 600;
-    font-family: 'Sansation', sans-serif;
     letter-spacing: normal;
     color: #000000;
 }
@@ -80,12 +75,11 @@
     margin-bottom: 16px;
     flex-grow: 1;
     font-size: 14px;
-    font-family: 'Sansation', sans-serif;
     color: #000000;
     line-height: 1.5;
 }
 
-/* Card trandormation effects */
+/* Card transformation effects */
 .project-card:hover {
     transform: translateY(-20px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
